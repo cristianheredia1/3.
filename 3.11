@@ -1,0 +1,15 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Años de servicio: ");
+        int años = int.Parse(Console.ReadLine());
+
+        int bono = años >= 5 ? 1000 : años * 100;
+
+        Console.WriteLine($"El bono que recibirás es: ${bono}");
+        Console.ReadKey();
+    }
+}
