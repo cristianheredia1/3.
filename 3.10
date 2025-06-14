@@ -1,0 +1,26 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("¿Cuál es tu presupuesto para viajar? ");
+        double presupuesto = double.Parse(Console.ReadLine());
+
+        string destino;
+
+        if (presupuesto >= 3600)
+            destino = "Cancún";
+        else if (presupuesto >= 2400)
+            destino = "Acapulco";
+        else if (presupuesto >= 1600)
+            destino = "Puerto Vallarta";
+        else if (presupuesto >= 1500)
+            destino = "Ciudad de México";
+        else
+            destino = "Ningún destino disponible";
+
+        Console.WriteLine($"Con ese presupuesto puedes viajar a: {destino}");
+        Console.ReadKey();
+    }
+}
