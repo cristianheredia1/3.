@@ -1,0 +1,26 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Número de alumnos: ");
+        int alumnos = int.Parse(Console.ReadLine());
+        int costoPorAlumno;
+
+        if (alumnos >= 100)
+            costoPorAlumno = 20;
+        else if (alumnos >= 50)
+            costoPorAlumno = 35;
+        else if (alumnos >= 20)
+            costoPorAlumno = 40;
+        else
+            costoPorAlumno = 70;
+
+        int costoTotal = alumnos * costoPorAlumno;
+
+        Console.WriteLine($"Cada alumno pagará: ${costoPorAlumno}");
+        Console.WriteLine($"Costo total del viaje: ${costoTotal}");
+        Console.ReadKey();
+    }
+}
