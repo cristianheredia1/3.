@@ -1,0 +1,36 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Tipo de póliza (A/B): ");
+        string tipoPoliza = Console.ReadLine().ToUpper();
+
+        Console.Write("¿Consume alcohol? (s/n): ");
+        bool consumeAlcohol = Console.ReadLine().ToLower() == "s";
+
+        Console.Write("¿Usa lentes? (s/n): ");
+        bool usaLentes = Console.ReadLine().ToLower() == "s";
+
+        Console.Write("¿Tiene alguna enfermedad? (s/n): ");
+        bool tieneEnfermedad = Console.ReadLine().ToLower() == "s";
+
+        Console.Write("Edad: ");
+        int edad = int.Parse(Console.ReadLine());
+
+        double costoBase = (tipoPoliza == "A") ? 1200 : 950;
+        double incremento = 0;
+
+        if (consumeAlcohol) incremento += 0.10;
+        if (usaLentes) incremento += 0.05;
+        if (tieneEnfermedad) incremento += 0.05;
+
+        incremento += (edad > 40) ? 0.20 : 0.10;
+
+        double costoTotal = costoBase + (costoBase * incremento);
+
+        Console.WriteLine($"El costo total de la póliza es: ${costoTotal}");
+        Console.ReadKey();
+    }
+}
