@@ -1,0 +1,33 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("¿Cuántas horas trabajaste? ");
+        int horas = int.Parse(Console.ReadLine());
+
+        if (horas > 50)
+        {
+            Console.WriteLine("No puedes trabajar más de 50 horas.");
+        }
+        else
+        {
+            Console.Write("Pago por hora: ");
+            double pagoHora = double.Parse(Console.ReadLine());
+
+            double total = 0;
+
+            if (horas <= 40)
+                total = horas * pagoHora;
+            else if (horas <= 45)
+                total = 40 * pagoHora + (horas - 40) * pagoHora * 2;
+            else
+                total = 40 * pagoHora + 5 * pagoHora * 2 + (horas - 45) * pagoHora * 3;
+
+            Console.WriteLine($"El total a pagar es: ${total}");
+        }
+
+        Console.ReadKey();
+    }
+}
