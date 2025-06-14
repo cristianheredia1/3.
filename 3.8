@@ -1,0 +1,32 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("¿Cuántos años de antigüedad tienes?: ");
+        int antiguedad = int.Parse(Console.ReadLine());
+
+        Console.Write("Sueldo actual: ");
+        double sueldo = double.Parse(Console.ReadLine());
+
+        double bonoPorAntiguedad = 0;
+        if (antiguedad >= 2 && antiguedad < 5)
+            bonoPorAntiguedad = sueldo * 0.20;
+        else if (antiguedad >= 5)
+            bonoPorAntiguedad = sueldo * 0.30;
+
+        double bonoPorSueldo;
+        if (sueldo < 1000)
+            bonoPorSueldo = sueldo * 0.25;
+        else if (sueldo <= 3500)
+            bonoPorSueldo = sueldo * 0.15;
+        else
+            bonoPorSueldo = sueldo * 0.10;
+
+        double bonoFinal = bonoPorAntiguedad > bonoPorSueldo ? bonoPorAntiguedad : bonoPorSueldo;
+
+        Console.WriteLine($"El bono que recibirá es: ${bonoFinal}");
+        Console.ReadKey();
+    }
+}
