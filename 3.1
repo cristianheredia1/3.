@@ -1,0 +1,17 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("¿Cuál es tu edad? ");
+        int edad = Convert.ToInt32(Console.ReadLine());
+
+        if (edad >= 18)
+            Console.WriteLine("Tienes permiso para votar en las próximas elecciones.");
+        else
+            Console.WriteLine("Aún no puedes votar.");
+
+        Console.ReadKey();
+    }
+}
