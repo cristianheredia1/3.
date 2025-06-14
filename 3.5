@@ -1,0 +1,43 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string nombreA, nombreB, nombreC;
+        int edadA, edadB, edadC;
+
+        Console.Write("Nombre de la primera persona: ");
+        nombreA = Console.ReadLine();
+        Console.Write("Edad: ");
+        edadA = int.Parse(Console.ReadLine());
+
+        Console.Write("Nombre de la segunda persona: ");
+        nombreB = Console.ReadLine();
+        Console.Write("Edad: ");
+        edadB = int.Parse(Console.ReadLine());
+
+        Console.Write("Nombre de la tercera persona: ");
+        nombreC = Console.ReadLine();
+        Console.Write("Edad: ");
+        edadC = int.Parse(Console.ReadLine());
+
+        string nombreMenor = nombreA;
+        int edadMenor = edadA;
+
+        if (edadB < edadMenor)
+        {
+            nombreMenor = nombreB;
+            edadMenor = edadB;
+        }
+
+        if (edadC < edadMenor)
+        {
+            nombreMenor = nombreC;
+            edadMenor = edadC;
+        }
+
+        Console.WriteLine($"La persona más joven es {nombreMenor} con {edadMenor} años.");
+        Console.ReadKey();
+    }
+}
