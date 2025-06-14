@@ -1,0 +1,31 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Número de horas que usó el servicio: ");
+        int horas = int.Parse(Console.ReadLine());
+        double pagoTotal = 0;
+
+        if (horas <= 2)
+        {
+            pagoTotal = horas * 5;
+        }
+        else if (horas <= 5)
+        {
+            pagoTotal = 2 * 5 + (horas - 2) * 4;
+        }
+        else if (horas <= 10)
+        {
+            pagoTotal = 2 * 5 + 3 * 4 + (horas - 5) * 3;
+        }
+        else
+        {
+            pagoTotal = 2 * 5 + 3 * 4 + 5 * 3 + (horas - 10) * 2;
+        }
+
+        Console.WriteLine($"El total a pagar es: ${pagoTotal}");
+        Console.ReadKey();
+    }
+}
