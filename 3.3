@@ -1,0 +1,21 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("¿Cuánto dinero quieres gastar? ");
+        double monto = double.Parse(Console.ReadLine());
+
+        if (monto <= 10)
+            Console.WriteLine("Puedes comprar una tarjeta.");
+        else if (monto <= 100)
+            Console.WriteLine("Te recomiendo chocolates.");
+        else if (monto <= 250)
+            Console.WriteLine("Un ramo de flores sería ideal.");
+        else
+            Console.WriteLine("Quizás un anillo sería un buen regalo.");
+
+        Console.ReadKey();
+    }
+}
